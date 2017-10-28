@@ -15,10 +15,51 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
+  .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+      .state('main', {
+        url:'/',
+        templateUrl:'views/main.html',
+        controller:'MainCtrl'
+      })
+      .state('login', {
+        url:'/login',
+        templateUrl:'views/login.html',
+        controller:'LoginCtrl'
+      })
+      .state('signup',{
+        url:'/signup',
+        templateUrl:'views/signup.html',
+        controller:'SignupCtrl'
+      })
+      .state('user-list',{
+        url:'/user/list',
+        templateUrl:'views/user-list.html',
+        controller:'UserListCtrl'
+      })
+      .state('user-detail',{
+        url:'/user/detail',
+        templateUrl:'views/user-detail.html',
+        controller:'UserDetailCtrl'
+      })
+      .state('user-withdraw',{
+        url:'/user/withdraw',
+        templateUrl:'views/user-withdraw.html',
+        controller:'UserWithdrawCtrl'
+      })
+      .state('api',{
+        url:'/user/api',
+        templateUrl:'views/api.html',
+        controller:'UserApiCtrl'
+      })
+
+
+    /*$routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
@@ -26,5 +67,5 @@ angular
       })
       .otherwise({
         redirectTo: '/'
-      });
+      });*/
   });
