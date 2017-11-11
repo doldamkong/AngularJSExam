@@ -22,6 +22,15 @@ angular
   .config(function ($stateProvider, $urlRouterProvider, $routeProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider
+
+
+      // .state('api',{
+      //   url:'/user/api',
+      //   templateUrl:'views/api.html',
+      //   controller:'UserApiCtrl'
+      // })
+
+
       .state('main', {
         url:'/',
         templateUrl:'views/main.html',
@@ -38,26 +47,22 @@ angular
         controller:'SignupCtrl'
       })
       .state('user-list',{
-        url:'/user/list',
+        url:'/task/list',
         templateUrl:'views/user-list.html',
         controller:'UserListCtrl'
       })
-      .state('user-detail',{
-        url:'/user/detail',
-        templateUrl:'views/user-detail.html',
-        controller:'UserDetailCtrl'
-      })
-      .state('user-withdraw',{
-        url:'/user/withdraw',
-        templateUrl:'views/user-withdraw.html',
-        controller:'UserWithdrawCtrl'
-      })
-      .state('api',{
-        url:'/user/api',
-        templateUrl:'views/api.html',
-        controller:'UserApiCtrl'
-      })
+      
 
+      // .state('user-detail',{
+      //   url:'/user/detail',
+      //   templateUrl:'views/user-detail.html',
+      //   controller:'UserDetailCtrl'
+      // })
+      // .state('user-withdraw',{
+      //   url:'/user/withdraw',
+      //   templateUrl:'views/user-withdraw.html',
+      //   controller:'UserWithdrawCtrl'
+      // })
 
     /*$routeProvider
       .when('/', {

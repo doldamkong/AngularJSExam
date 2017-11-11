@@ -17,15 +17,16 @@ angular.module('angularJsexamApp')
       'Karma'
     ];
 
-    $scope.name = "";
-    $scope.age = "";
+    
+    $scope.tablename = "";
+    $scope.memo = "";
     $scope.saveUserInfo = function() {
       var dataPromise = Data.setData(
-        'http://10.0.2.2:52273/user',
-        '&name='+$scope.name+'&age='+$scope.age);
+        'http://10.0.2.2:52273/signup',
+        '&tablename='+$scope.tablename+'&memo='+$scope.memo);
       dataPromise.then(function(restuls){
-        $scope.name = "";
-        $scope.age = "";
+        $scope.tablename = "";
+        $scope.memo = "";
       },function(reason){},function(update){});
     };
 
